@@ -1,9 +1,21 @@
--name: Ansible create user example.
- user:
-   name: user
-   password: <cripted password link in /etc/passwd file>
-tasks:
--name: Ansible add user to group example
- user:
-   name: user
-   groups: wheel
+### Add user
+- hosts: all
+  tasks:
+  -name: Ansible create user example.
+   user:
+     name: user
+     password: <cripted password link in /etc/passwd file>
+  tasks:
+  -name: Ansible add user to group example
+   user:
+     name: user
+     groups: wheel
+
+### Del user
+
+- hosts: all
+  tasks:
+  - name: ansible remove user example
+    user:
+      name: user
+      state: absent
