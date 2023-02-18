@@ -1,0 +1,9 @@
+-name: Ansible create user example.
+ user:
+   name: user
+   password: password
+tasks:
+-name: Ansible add user to group example
+ user:
+   name: user
+   groups: wheel
