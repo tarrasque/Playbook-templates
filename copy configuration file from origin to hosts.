@@ -1,0 +1,10 @@
+- hosts: all
+  become: true
+  become_user: root
+  tasks:
+  - copy:
+    src: /home res/file.conf
+    dest: /etc/dest/foo.conf
+    owner: root
+    group: root
+    mode: 0644
